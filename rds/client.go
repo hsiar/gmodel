@@ -15,11 +15,11 @@ type Client struct {
 
 func (this *Client) WithConfig(config *Config) *Client {
 	this.Config = config
-	this.Init()
+	this.Open()
 	return this
 }
 
-func (this *Client) Init() {
+func (this *Client) Open() {
 	this.Client = redis.NewClient(&redis.Options{
 		Addr:     fmt.Sprintf("%s:%d", this.Config.Host, this.Config.Port),
 		Password: this.Config.Password,
@@ -50,7 +50,7 @@ func NewClient() (c *Client) {
 func ClientIns() (client *Client) {
 	if clientIns == nil {
 		clientIns = &Client{}
-		clientIns.Init()
+		clientIns.Open()
 		//clientIns.Client = redis.NewClient(&redis.Options{
 		//	//Network:  "tcp", //tcp or unix，default tcp
 		//	Addr:     fmt.Sprintf("%s:%d", global.AppConf.Redis.Host, global.AppConf.Redis.Port),

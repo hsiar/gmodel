@@ -7,21 +7,26 @@ import (
 )
 
 type BaseDb struct {
-	c *corm.Client `gorm:"-"`
+	//c *corm.Client `gorm:"-"`
 }
 
 // 默认返回key=default的crom实例
-func (this *BaseDb) SetClient(c *corm.Client) {
-	this.c = corm.ClientIns()
-}
+//func (this *BaseDb) SetClient(c ...*corm.Client) {
+//	if len(c) > 0 {
+//		this.c = c[0]
+//	} else {
+//		this.c = corm.ClientIns()
+//	}
+//}
 
 func (this *BaseDb) Client() *corm.Client { //默认返回主数据库
-	return this.c
+	return corm.ClientIns()
+	//return this.c
 }
 
-func (this *BaseDb) TableName(name string) string {
-	return this.Client().Config.TablePrefix + name
-}
+//func (this *BaseDb) TableName(name string) string {
+//	return this.Client().Config.TablePrefix + name
+//}
 
 func (this *BaseDb) Db() *gorm.DB {
 	return this.Client().Db
