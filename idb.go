@@ -6,7 +6,7 @@ type IDb interface {
 	IBase
 
 	//基类实现
-	SetClient(c *corm.Client)
+	//SetClient(c *corm.Client)
 	Client() *corm.Client
 
 	//实体类实现
