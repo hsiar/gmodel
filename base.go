@@ -16,8 +16,8 @@ func (this *Base) ToString(child IBase) string {
 	return str
 }
 
-func (this *Base) ToCMap(child IBase) (gbase.CMap, error) {
-	m := gbase.CMap{}
+func (this *Base) ToCMap(child IBase) (gbase.Map, error) {
+	m := gbase.Map{}
 	if bytes, err := jsoniter.Marshal(child); err != nil {
 		return nil, err
 	} else if err = jsoniter.Unmarshal(bytes, &m); err != nil {
@@ -29,7 +29,7 @@ func (this *Base) ToCMap(child IBase) (gbase.CMap, error) {
 // ToCMapExclude
 //
 //keys:xx,xx,xx
-func (this *Base) ToCMapExclude(child IBase, keys ...string) (cm gbase.CMap, err error) {
+func (this *Base) ToCMapExclude(child IBase, keys ...string) (cm gbase.Map, err error) {
 	if cm, err = this.ToCMap(child); err != nil {
 		return
 	}
@@ -38,7 +38,7 @@ func (this *Base) ToCMapExclude(child IBase, keys ...string) (cm gbase.CMap, err
 
 }
 
-func (this *Base) ToCMapMustExclude(child IBase, keys ...string) (cm gbase.CMap) {
+func (this *Base) ToCMapMustExclude(child IBase, keys ...string) (cm gbase.Map) {
 	var err error
 	if cm, err = this.ToCMap(child); err != nil {
 		hlog.Errorf("Base.ToCMapMustExclude err:%s", err.Error())
@@ -49,11 +49,11 @@ func (this *Base) ToCMapMustExclude(child IBase, keys ...string) (cm gbase.CMap)
 
 }
 
-func (this *Base) ToCMapInclude(child IBase, keys ...string) (cm gbase.CMap, err error) {
+func (this *Base) ToCMapInclude(child IBase, keys ...string) (cm gbase.Map, err error) {
 	var (
-		all gbase.CMap
+		all gbase.Map
 	)
-	cm = gbase.CMap{}
+	cm = gbase.Map{}
 	if all, err = this.ToCMap(child); err != nil {
 		return
 	}
@@ -65,12 +65,12 @@ func (this *Base) ToCMapInclude(child IBase, keys ...string) (cm gbase.CMap, err
 	return
 }
 
-func (this *Base) ToCMapMustInclude(child IBase, keys ...string) (cm gbase.CMap) {
+func (this *Base) ToCMapMustInclude(child IBase, keys ...string) (cm gbase.Map) {
 	var (
-		all gbase.CMap
+		all gbase.Map
 		err error
 	)
-	cm = gbase.CMap{}
+	cm = gbase.Map{}
 	if all, err = this.ToCMap(child); err != nil {
 		panic("Base.ToCMapMustInclude err:" + err.Error())
 	}

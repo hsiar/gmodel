@@ -2,7 +2,6 @@ package gmodel
 
 import (
 	"fmt"
-	"github.com/samber/lo"
 	"strings"
 )
 
@@ -30,7 +29,11 @@ func (this *BaseTree) DSonNum(child ITree) int64 {
 }
 
 func (this *BaseTree) MkSonPath(child ITree) string {
-	return lo.If(child.GetId() == 0, ",").Else(fmt.Sprintf("%s%d,", child.GetPath(), child.GetId()))
+	if child.GetId() == 0 {
+		return ","
+	} else {
+		return fmt.Sprintf("%s%d,", child.GetPath(), child.GetId())
+	}
 }
 
 func (this *BaseTree) HasDSon(child ITree, dson ITree) bool {
