@@ -80,6 +80,8 @@ github.com/hertz-contrib/sse v0.0.5 h1:VQJ8Yv+mQKp8nkRfbzfxPH1fQTEpGP+ZV4Lhkp4L0
 github.com/hertz-contrib/sse v0.0.5/go.mod h1:hCL17JP8wGf4l3zvbkSdwtYV+3Ikdu3VvpTdeOKM2uE=
 github.com/hsiar/gbase v0.0.0-20240713081647-0a803e56f9f5 h1:6ZFK7mUOxSqJcGXacjcKhwz6fQa3Ij12boxXSlW3FXY=
 github.com/hsiar/gbase v0.0.0-20240713081647-0a803e56f9f5/go.mod h1:hz8FuoP2IuPvbbu/ZQ88RWZrO2Lhzrrf/uBd2DYClaY=
+github.com/hsiar/gbase v0.0.0-20240713084247-0bc8c84f47d8 h1:UFkYmMyjk0ldLMQE9LgOtY0P33t6Kt1Hz7BJ8oT13Ks=
+github.com/hsiar/gbase v0.0.0-20240713084247-0bc8c84f47d8/go.mod h1:hz8FuoP2IuPvbbu/ZQ88RWZrO2Lhzrrf/uBd2DYClaY=
 github.com/inconshreveable/mousetrap v1.0.0/go.mod h1:PxqpIevigyE2G7u3NXJIT2ANytuPF1OarO4DADm73n8=
 github.com/jackc/pgpassfile v1.0.0 h1:/6Hmqy13Ss2zCq62VdNG8tM1wchn8zjSGOBJ6icpsIM=
 github.com/jackc/pgpassfile v1.0.0/go.mod h1:CEx0iS5ambNFdcRtxPj5JhEz+xB6uRky5eyVu/W2HEg=

@@ -6,7 +6,7 @@ require (
 	github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2
 	github.com/beego/beego/v2 v2.2.2
 	github.com/cloudwego/hertz v0.9.1
-	github.com/hsiar/gbase v0.0.0-20240713081647-0a803e56f9f5
+	github.com/hsiar/gbase v0.0.0-20240713084247-0bc8c84f47d8
 	github.com/json-iterator/go v1.1.12
 	github.com/pkg/errors v0.9.1
 	github.com/redis/go-redis/v9 v9.5.3
